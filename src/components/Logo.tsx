@@ -1,9 +1,11 @@
 import React from 'react';
 
-import LogoImage from './ludum_logo_blue.png';
+interface Props {
+        imgURL: string;
+}
 
-export const Logo = () => (
-        <img style={appTitleStyles} src={LogoImage} />
+export const Logo = (props: Props) => (
+        <img style={appTitleStyles} src={props.imgURL} />
 )
 
 const appTitleStyles = {
@@ -11,5 +13,5 @@ const appTitleStyles = {
     margin            : 'auto',
     padding           : '5px 0',
     height            : '50px',
-    width            : '100px',
+    width            : '50px',
   };
