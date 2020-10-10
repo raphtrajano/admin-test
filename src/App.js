@@ -43,19 +43,22 @@ const dataProvider = fakeDataProvider({
     { id: 0,  author: 'John Doe', body: 'Sensational!' },
     { id: 1,  author: 'Jane Doe', body: 'I agree' },
   ],
-  account: {
-    profile: 'My name',
-  }
+  account: [
+    {
+      profile: 'My name',
+
+    }
+  ]
 });
 
 function App() {
   return (
     <div className="App">
       <Admin layout={CustomLayout} theme={LudumTheme} dataProvider={dataProvider}>
-      <Resource icon={LocalLibraryIcon} name="boards" list={BoardsList} />
-      <Resource icon={CategoryIcon} name="categories" list={CategoryList} />
-      <Resource icon={RateReviewIcon} name="reviews" list={ReviewList} />
-      <Resource icon={AccountBoxIcon} options={{ label: 'Account' }}name="account" list={ListGuesser} />
+      <Resource icon={LocalLibraryIcon} options={{ label: 'Home/Boards' }} name="boards" list={BoardsList} />
+      <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="categories" list={CategoryList} />
+      <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
+      <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ListGuesser} />
     </Admin>
     </div>
   );
