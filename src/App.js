@@ -5,26 +5,33 @@ import { Title } from 'react-admin';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import CategoryIcon from '@material-ui/icons/Category';
 import RateReviewIcon from '@material-ui/icons/RateReview';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 import fakeDataProvider from 'ra-data-fakerest';
 
 import { LudumTheme } from './components/LudumTheme';
-import { PostList } from './components/posts';
+import { BoardsList } from './components/Boards';
 import { CategoryList } from './components/Categories';
 import { ReviewList } from './components/Reviews';
-import { Logo } from './components/Logo';
+import { CustomLayout } from './components/CustomLayout';
 import './App.css';
 
 const dataProvider = fakeDataProvider({
   boards: [
     {
-      id: 0, title: 'Board 1',
+      id: 0, 
+      title: 'My first Board',
+      imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRPcaeXEtyzW78TkrttXLLR8TPw2vDCessOQ&usqp=CAU',
     },
     {
-      id: 1, title: 'Board 2',
+      id: 1, 
+      title: 'Test Board',
+      imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRD7k_4pyYuJrVXCQmxBNilTXvp6-gxvj4g2w&usqp=CAU',
     },
     {
-      id: 2, title: 'Board 3',
+      id: 2, 
+      title: 'Board 3',
+      imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTga9wZ7jLJ74Ni6RuvjWhjYZEAUpVfmco-uQ&usqp=CAU',
     }
   ],
   categories: [
@@ -36,16 +43,19 @@ const dataProvider = fakeDataProvider({
     { id: 0,  author: 'John Doe', body: 'Sensational!' },
     { id: 1,  author: 'Jane Doe', body: 'I agree' },
   ],
+  account: {
+    profile: 'My name',
+  }
 });
 
 function App() {
   return (
     <div className="App">
-      <Admin theme={LudumTheme} title={<Logo/>} dataProvider={dataProvider}>
-        <Title title={<Logo/>} />
-      <Resource icon={LocalLibraryIcon} name="boards" list={PostList} />
+      <Admin layout={CustomLayout} theme={LudumTheme} dataProvider={dataProvider}>
+      <Resource icon={LocalLibraryIcon} name="boards" list={BoardsList} />
       <Resource icon={CategoryIcon} name="categories" list={CategoryList} />
       <Resource icon={RateReviewIcon} name="reviews" list={ReviewList} />
+      <Resource icon={AccountBoxIcon} options={{ label: 'Account' }}name="account" list={ListGuesser} />
     </Admin>
     </div>
   );
