@@ -13,7 +13,8 @@ import { LudumTheme } from './components/LudumTheme';
 import { BoardsList } from './components/Boards';
 import { CategoryList } from './components/Categories';
 import { ReviewList } from './components/Reviews';
-import { ProfileEdit } from './components/ProfileEdit';
+import { ProfileEdit } from './components/Profile/ProfileEdit';
+import { ProfileList } from './components/Profile/ProfileList';
 import { CustomLayout } from './components/CustomLayout';
 import './App.css';
 
@@ -48,8 +49,9 @@ const dataProvider = fakeDataProvider({
     {
       first_name: 'Doug',
       last_name: 'wick',
+      address: '183 Court St.Rosedale, NY 11422',
       sex: 'Male',
-      email: 'example@gmail.com'
+      birth_date: '20/10/1990',
     }
   ]
 });
@@ -61,7 +63,7 @@ function App() {
       <Resource icon={LocalLibraryIcon} options={{ label: 'Home/Boards' }} name="boards" list={BoardsList} />
       <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="categories" list={CategoryList} />
       <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
-      <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ListGuesser} edit={ProfileEdit} />
+      <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ProfileList} edit={ProfileEdit} />
     </Admin>
     </div>
   );
