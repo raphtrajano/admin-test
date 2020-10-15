@@ -26,7 +26,7 @@ export const LudumTheme = createMuiTheme({
         },
         MuiDrawer: {
             root: {
-                backgroundColor: 'rgba(42, 155, 225, 0.8)'
+                backgroundColor: 'rgba(75, 175, 255, 0.8);'
             }
         },
         RaMenuItemLink: {
@@ -38,5 +38,10 @@ export const LudumTheme = createMuiTheme({
                 borderRight: '4px solid blue',
             },
         },
+        MuiSvgIcon: {
+            root: {
+                color: '#000000',
+            }
+        }
     },
 });

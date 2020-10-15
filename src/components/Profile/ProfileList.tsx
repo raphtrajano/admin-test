@@ -3,10 +3,7 @@ import { FC } from 'react';
 import { EditButton, List, ListProps, useListContext } from 'react-admin';
 // import inflection from 'inflection';
 import {
-    Box,
-    Grid,
     Card,
-    CardMedia,
     CardContent,
     CardActions,
     Typography,
@@ -18,46 +15,104 @@ const CategoryGrid = props => {
     const { data, ids, loaded } = useListContext();
     return loaded ? (
         <ProfileWrapper>
+            <Typography
+                variant="h4"
+                component="h1"
+                align="center"
+                className="my-profile"
+            >
+                My Profile
+            </Typography>
             <Card className="card">
                 <CardContent className="full-width">
+                    <h3 className="field">
+                        Name: 
+                    </h3>
                     <Typography
                         variant="h5"
-                        component="h2"
+                        component="h3"
                         align="center"
                     >
-                        Name: {data[0].first_name}
+                        {data[0].first_name}
+                        &nbsp;
                         {data[0].last_name}
                     </Typography>
                 </CardContent>
                 <CardContent className="full-width">
+                    <h3 className="field">
+                        Address: 
+                    </h3>
                     <Typography
                         variant="h5"
                         component="h2"
                         align="center"
                     >
-                        Address: {data[0].address} 
+                        {data[0].address} 
                     </Typography>
                 </CardContent>
                 <CardContent className="full-width">
+                    <h3 className="field">
+                        Sex: 
+                    </h3>
                     <Typography
                         variant="h5"
                         component="h2"
                         align="center"
                     >
-                        Sex: {data[0].sex} 
+                        {data[0].sex} 
                     </Typography>
                 </CardContent>
                 <CardContent className="full-width">
+                    <h3 className="field">
+                        Birth Date: 
+                    </h3>
                     <Typography
                         variant="h5"
                         component="h2"
                         align="center"
                     >
-                        Birth Date: {data[0].birth_date} 
+                        {data[0].birth_date} 
+                    </Typography>
+                </CardContent>
+                <CardContent className="full-width">
+                    <h3 className="field">
+                        Latest Invoice Amount: 
+                    </h3>
+                    <Typography
+                        variant="h5"
+                        component="h2"
+                        align="center"
+                    >
+                        {data[0].latest_amount}$
+                    </Typography>
+                </CardContent>
+                <CardContent className="full-width">
+                    <h3 className="field">
+                        Current plan: 
+                    </h3>
+                    <Typography
+                        variant="h5"
+                        component="h2"
+                        align="center"
+                    >
+                        {data[0].plan_type} 
+                    </Typography>
+                </CardContent>
+                <CardContent className="full-width">
+                    <h3 className="field">
+                        Billing: 
+                    </h3>
+                    <Typography
+                        variant="h5"
+                        component="h2"
+                        align="center"
+                    >
+                        {data[0].billing}
                     </Typography>
                 </CardContent>
                     <CardActions>
                         <EditButton
+                            className="edit-btn"
                             basePath="/account/0"
                         />
                         </CardActions>
