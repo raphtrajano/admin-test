@@ -51,7 +51,12 @@ const dataProvider = fakeDataProvider({
       last_name: 'wick',
       address: '183 Court St.Rosedale, NY 11422',
       sex: 'Male',
-      birth_date: '20/10/1990',
+      password: 'easypassword',
+      birth_date: '1990-10-20',
+      latest_amount: 40,
+      billing: '-',
+      plan_type: 'Free',
+      TwoFactorAuthentication: true,
     }
   ]
 });
