@@ -25,22 +25,23 @@ export const LudumTheme = createMuiTheme({
             }
         },
         MuiDrawer: {
-            root: {
-                backgroundColor: 'rgba(75, 175, 255, 0.8);'
+            paperAnchorLeft: {
+                background: 'linear-gradient(90deg, rgba(16,69,116,1) 0%, rgba(0,145,255,1) 100%);',
             }
         },
         RaMenuItemLink: {
             root: {
-                color: '#000',
+                color: '#ffffff',
             },
             active: {
+                color: '#ffffff',
                 fontWeight: 'bold',
-                borderRight: '4px solid blue',
+                background: '#2165a0',
             },
         },
-        MuiSvgIcon: {
+        MuiListItemIcon: {
             root: {
-                color: '#000000',
+                color: '#ffffff',
             }
         }
     },

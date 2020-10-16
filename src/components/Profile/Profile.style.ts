@@ -37,20 +37,6 @@ const ProfileWrapper = styled.div`
         margin-top: 15px;
         padding: 0;
     }
-    .MuiButton-text {
-        width: 100%;
-        color: black;
-        font-size: 20px;
-        font-weight: bold;
-        /* margin: 10px; */
-        padding: 10px;
-        background-color: none;
-        /* padding: 0; */
-        height: auto;
-        svg {
-            font-size: 25px;
-        }
-    }
     .my-profile {
         width: 100%;
         margin-top: 32px;
@@ -80,7 +66,21 @@ const ProfileWrapper = styled.div`
         flex-wrap: wrap;
     }
     .edit-btn {
-
+        width: 100%;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        /* margin: 10px; */
+        padding: 10px;
+        background: linear-gradient(90deg, rgba(33,101,160,1) 0%, rgba(0,118,214,1) 100%);
+        /* padding: 0; */
+        height: auto;
+        flex: 1;
+        border-radius: 0;
+        svg {
+            color: #000000;
+            font-size: 25px;
+        }
     }
 `;
 

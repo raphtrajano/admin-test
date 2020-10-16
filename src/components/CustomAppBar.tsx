@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 export const CustomAppBar = props => {
     const classes = useStyles();
     return (
-        <AppBar userMenu={<span>Welcome, user!</span>} className={classes.root} {...props}>
+        <AppBar userMenu={<span>Welcome, Doug wick!</span>} className={classes.root} {...props}>
             <Logo imgURL = {atom} />
             <Typography
                 variant="h6"
