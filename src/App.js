@@ -6,6 +6,7 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import CategoryIcon from '@material-ui/icons/Category';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import HelpIcon from '@material-ui/icons/Help';
 
 import fakeDataProvider from 'ra-data-fakerest';
 
@@ -58,7 +59,8 @@ const dataProvider = fakeDataProvider({
       plan_type: 'Free',
       TwoFactorAuthentication: true,
     }
-  ]
+  ],
+  help: [{ text: 'This is the Ludum boards support' }]
 });
 
 function App() {
@@ -69,6 +71,7 @@ function App() {
       <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="categories" list={CategoryList} />
       <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
       <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ProfileList} edit={ProfileEdit} />
+      <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={ListGuesser} />
     </Admin>
     </div>
   );
