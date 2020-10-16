@@ -52,14 +52,14 @@ const CategoryGrid = props => {
                 </CardContent>
                 <CardContent className="full-width">
                     <h3 className="field">
-                        Sex: 
+                        Gender: 
                     </h3>
                     <Typography
                         variant="h5"
                         component="h2"
                         align="center"
                     >
-                        {data[0].sex} 
+                        {data[0].gender} 
                     </Typography>
                 </CardContent>
                 <CardContent className="full-width">

@@ -51,7 +51,7 @@ const dataProvider = fakeDataProvider({
       first_name: 'Doug',
       last_name: 'wick',
       address: '183 Court St.Rosedale, NY 11422',
-      sex: 'Male',
+      gender: 'Male',
       password: 'easypassword',
       birth_date: '1990-10-20',
       latest_amount: 40,

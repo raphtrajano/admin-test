@@ -1,5 +1,15 @@
 import React from 'react';
-import { Edit, SimpleForm, TextInput, DateInput, SaveButton, Toolbar } from 'react-admin';
+import { 
+    Edit, 
+    SimpleForm, 
+    TextInput, 
+    DateInput, 
+    SaveButton, 
+    Toolbar, 
+    required,
+    minLength,
+    maxLength,
+} from 'react-admin';
 import { Box } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -19,6 +29,12 @@ const ProfileToolbar = props => (
             />
         </Toolbar>
 );
+
+const validateFirstName = [required(), minLength(2), maxLength(15)];
+const validateLastName = [required(), minLength(2), maxLength(15)];
+const validateSetNewPassword = [minLength(6)];
+const validateConfirmPassword = [minLength(6)];
+//ADICIONAR VERIFICACAO DAS SENHAS PARA BATEREM 
 
 export const ProfileEdit = (props) => {
     const [state, setState] = React.useState({
@@ -48,13 +64,21 @@ export const ProfileEdit = (props) => {
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                <TextInput source="first_name" resource="first_name" fullWidth />
+                                <TextInput 
+                                    source="first_name" 
+                                    resource="first_name" 
+                                    validate={validateFirstName} 
+                                    fullWidth />
                                 </Box>
                                 <Box
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                <TextInput source="last_name" resource="last_name" fullWidth />
+                                <TextInput 
+                                    source="last_name" 
+                                    resource="last_name" 
+                                    validate={validateLastName} 
+                                    fullWidth />
                                 </Box>
                             </Box>
                             <Box
@@ -68,7 +92,7 @@ export const ProfileEdit = (props) => {
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                    <TextInput source="sex" resource="sex" fullWidth />
+                                    <TextInput source="gender" resource="gender" fullWidth />
                                 </Box>
                                 <Box
                                     flex={1}
@@ -88,13 +112,21 @@ export const ProfileEdit = (props) => {
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                    <TextInput source="Set New Password" type="password" fullWidth />
+                                    <TextInput 
+                                        source="Set New Password" 
+                                        type="password" 
+                                        validate={validateSetNewPassword}
+                                        fullWidth />
                                 </Box>
                                 <Box
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                    <TextInput source="Confirm New Passwod" type="password" fullWidth/>
+                                    <TextInput 
+                                        source="Confirm New Passwod" 
+                                        type="password" 
+                                        validate={validateConfirmPassword}
+                                        fullWidth/>
                                 </Box>
                             </Box>
                             <FormControlLabel
