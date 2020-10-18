@@ -3,12 +3,14 @@ import {
     Edit, 
     SimpleForm, 
     TextInput, 
+    PasswordInput,
     DateInput, 
     SaveButton, 
     Toolbar, 
     required,
     minLength,
     maxLength,
+    choices,
 } from 'react-admin';
 import { Box } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
@@ -34,6 +36,7 @@ const validateFirstName = [required(), minLength(2), maxLength(15)];
 const validateLastName = [required(), minLength(2), maxLength(15)];
 const validateSetNewPassword = [minLength(6)];
 const validateConfirmPassword = [minLength(6)];
+
 //ADICIONAR VERIFICACAO DAS SENHAS PARA BATEREM 
 
 export const ProfileEdit = (props) => {
@@ -41,10 +44,10 @@ export const ProfileEdit = (props) => {
         checkedB: true,
       });
     
-      const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setState({ ...state, [event.target.name]: event.target.checked });
-      };
-
+    };
+    
     return (
         <ProfileEditWrapper>
             <Edit title=" " {...props}>
@@ -105,16 +108,15 @@ export const ProfileEdit = (props) => {
                                 flex={1}
                                 mr={{ xs: 0, sm: '0.5em' }}
                             >
-                                <TextInput label="Password" source="password" type="password" fullWidth />
+                                <PasswordInput label="Password" source="password" fullWidth />
                             </Box>
                             <Box display={{ xs: 'block', sm: 'flex' }}>
                                 <Box
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                    <TextInput 
+                                    <PasswordInput 
                                         source="Set New Password" 
-                                        type="password" 
                                         validate={validateSetNewPassword}
                                         fullWidth />
                                 </Box>
@@ -122,9 +124,8 @@ export const ProfileEdit = (props) => {
                                     flex={1}
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
-                                    <TextInput 
+                                    <PasswordInput 
                                         source="Confirm New Passwod" 
-                                        type="password" 
                                         validate={validateConfirmPassword}
                                         fullWidth/>
                                 </Box>
