@@ -58,6 +58,7 @@ const dataProvider = fakeDataProvider({
       billing: '-',
       plan_type: 'Free',
       TwoFactorAuthentication: true,
+      set_new_password: '',
     }
   ],
   help: [{ text: 'This is the Ludum boards support' }]

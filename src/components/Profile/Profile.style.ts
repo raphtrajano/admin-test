@@ -64,6 +64,7 @@ const ProfileWrapper = styled.div`
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+        text-align: initial;   
     }
     .edit-btn {
         width: 100%;

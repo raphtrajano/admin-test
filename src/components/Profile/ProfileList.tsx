@@ -31,7 +31,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h3"
-                        align="center"
                     >
                         {data[0].first_name}
                         &nbsp;
@@ -45,7 +44,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].address} 
                     </Typography>
@@ -57,7 +55,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].gender} 
                     </Typography>
@@ -69,7 +66,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].birth_date} 
                     </Typography>
@@ -81,7 +77,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].latest_amount}$
                     </Typography>
@@ -93,7 +88,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].plan_type} 
                     </Typography>
@@ -105,7 +99,6 @@ const CategoryGrid = props => {
                     <Typography
                         variant="h5"
                         component="h2"
-                        align="center"
                     >
                         {data[0].billing}
                     </Typography>

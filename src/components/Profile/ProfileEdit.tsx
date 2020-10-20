@@ -32,10 +32,17 @@ const ProfileToolbar = props => (
         </Toolbar>
 );
 
+const confirmPassword = (value, allValues) => {
+    let new_password = allValues.set_new_password;
+    if (value !== new_password) {
+        return 'Make sure your passwords match';
+    }
+}
+
 const validateFirstName = [required(), minLength(2), maxLength(15)];
 const validateLastName = [required(), minLength(2), maxLength(15)];
 const validateSetNewPassword = [minLength(6)];
-const validateConfirmPassword = [minLength(6)];
+const validateConfirmPassword = [confirmPassword];
 
 //ADICIONAR VERIFICACAO DAS SENHAS PARA BATEREM 
 
@@ -88,7 +95,7 @@ export const ProfileEdit = (props) => {
                                 flex={1}
                                 mr={{ xs: 0, sm: '0.5em' }}
                             >
-                                <TextInput source="address" resource="last_name" fullWidth />
+                                <TextInput source="address" resource="address" fullWidth />
                             </Box>
                             <Box display={{ xs: 'block', sm: 'flex' }}>
                                 <Box
@@ -116,7 +123,7 @@ export const ProfileEdit = (props) => {
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
                                     <PasswordInput 
-                                        source="Set New Password" 
+                                        source="set_new_password" 
                                         validate={validateSetNewPassword}
                                         fullWidth />
                                 </Box>
@@ -125,6 +132,7 @@ export const ProfileEdit = (props) => {
                                     mr={{ xs: 0, sm: '0.5em' }}
                                 >
                                     <PasswordInput 
+                                        resource="set_new_password"
                                         source="Confirm New Passwod" 
                                         validate={validateConfirmPassword}
                                         fullWidth/>
