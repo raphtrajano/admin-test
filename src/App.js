@@ -12,7 +12,7 @@ import fakeDataProvider from 'ra-data-fakerest';
 
 import { LudumTheme } from './components/LudumTheme';
 import { BoardsList } from './components/Boards';
-import { CategoryList } from './components/Categories';
+import { MilestonesList } from './components/Milestones/MilestonesList';
 import { ReviewList } from './components/Reviews';
 import { ProfileEdit } from './components/Profile/ProfileEdit';
 import { ProfileList } from './components/Profile/ProfileList';
@@ -61,6 +61,15 @@ const dataProvider = fakeDataProvider({
       set_new_password: '',
     }
   ],
+  milestones: [
+    { 
+      board: 'My first board',  
+      educator: 'Mr Jose', 
+      title: 'Some fixes to be done', 
+      status: 'Completed',
+      comment: 'Hey user, your board is great but I think that it would be better if you change de font size of the title' 
+    },
+  ],
   help: [{ text: 'This is the Ludum boards support' }]
 });
 
@@ -69,7 +78,7 @@ function App() {
     <div className="App">
       <Admin layout={CustomLayout} theme={LudumTheme} dataProvider={dataProvider}>
       <Resource icon={LocalLibraryIcon} options={{ label: 'Home/Boards' }} name="boards" list={BoardsList} />
-      <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="categories" list={CategoryList} />
+      <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="milestones" list={MilestonesList} />
       <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
       <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ProfileList} edit={ProfileEdit} />
       <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={ListGuesser} />
