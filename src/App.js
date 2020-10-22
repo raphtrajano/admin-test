@@ -66,8 +66,22 @@ const dataProvider = fakeDataProvider({
       board: 'My first board',  
       educator: 'Mr Jose', 
       title: 'Some fixes to be done', 
-      status: 'Completed',
+      status: 'Open',
       comment: 'Hey user, your board is great but I think that it would be better if you change de font size of the title' 
+    },
+    { 
+      board: 'Board 2',  
+      educator: 'Mr Paul', 
+      title: 'Random improvements', 
+      status: 'Expired',
+      comment: 'Hey user, Lorem ipsum Lorem ipsum' 
+    },
+    { 
+      board: 'Board 3',  
+      educator: 'Mrs Kate', 
+      title: 'This is finished!', 
+      status: 'Completed',
+      comment: 'Hey user, your board is great so no changes to be done!' 
     },
   ],
   help: [{ text: 'This is the Ludum boards support' }]
