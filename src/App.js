@@ -70,6 +70,20 @@ const dataProvider = fakeDataProvider({
       comment: 'Hey user, your board is great but I think that it would be better if you change de font size of the title' 
     },
     { 
+      board: 'Board 3',  
+      educator: 'Mrs Kate', 
+      title: 'This is finished!', 
+      status: 'completed',
+      comment: 'Hey user, your board is great so no changes to be done!' 
+    },
+    { 
+      board: 'Board 4',  
+      educator: 'Mrs Kate', 
+      title: 'This is finished!', 
+      status: 'completed',
+      comment: 'Hey user, your board is great so no changes to be done!' 
+    },
+    { 
       board: 'Board 2',  
       educator: 'Mr Paul', 
       title: 'Random improvements', 
@@ -77,11 +91,11 @@ const dataProvider = fakeDataProvider({
       comment: 'Hey user, Lorem ipsum Lorem ipsum' 
     },
     { 
-      board: 'Board 3',  
-      educator: 'Mrs Kate', 
-      title: 'This is finished!', 
-      status: 'completed',
-      comment: 'Hey user, your board is great so no changes to be done!' 
+      board: 'Board 5',  
+      educator: 'Mr Paul', 
+      title: 'Random improvements', 
+      status: 'expired',
+      comment: 'Hey user, Lorem ipsum Lorem ipsum' 
     },
   ],
   help: [{ text: 'This is the Ludum boards support' }]
