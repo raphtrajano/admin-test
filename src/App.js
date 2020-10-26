@@ -16,6 +16,7 @@ import { MilestonesList } from './components/Milestones/MilestonesList';
 import { ReviewList } from './components/Reviews';
 import { ProfileEdit } from './components/Profile/ProfileEdit';
 import { ProfileList } from './components/Profile/ProfileList';
+import { LudumHelp } from './components/LudumHelp/LudumHelp';
 import { CustomLayout } from './components/CustomLayout';
 import './App.css';
 
@@ -98,7 +99,10 @@ const dataProvider = fakeDataProvider({
       comment: 'Hey user, Lorem ipsum Lorem ipsum' 
     },
   ],
-  help: [{ text: 'This is the Ludum boards support' }]
+  help: [{
+    open: 0,
+    closed: 0,
+  }]
 });
 
 function App() {
@@ -109,7 +113,7 @@ function App() {
       <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="milestones" list={MilestonesList} />
       <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
       <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ProfileList} edit={ProfileEdit} />
-      <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={ListGuesser} />
+      <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={LudumHelp} />
     </Admin>
     </div>
   );
