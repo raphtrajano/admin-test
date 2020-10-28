@@ -20,9 +20,6 @@ const ZENDESK_KEY = '049c6823-594c-4d1c-aafa-4d09c22ea5cd';
 ZendeskAPI("webWidget", "setLocale", "de");
 
 const setting = {
-    color: {
-      theme: "#000"
-    },
     launcher: {
       chatLabel: {
         "en-US": "Need Help"
@@ -30,8 +27,8 @@ const setting = {
     },
     contactForm: {
       fields: [
-        { id: "description", prefill: { "*": "My pre-filled description" } }
-      ]
+        { id: "description", prefill: { "*": "I'm having some trouble with ..." } },
+      ],
     }
   };
 
