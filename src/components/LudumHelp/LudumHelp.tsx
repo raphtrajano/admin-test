@@ -1,10 +1,12 @@
-import * as React from "react";
+import React,{ useState } from "react";
 import { 
   FilterList,
   FilterListItem,
   FilterLiveSearch,
   useListContext, 
   List,
+  Datagrid,
+  TextField,
 } from 'react-admin';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
@@ -34,6 +36,7 @@ const setting = {
   };
 
 const Aside = () => {
+    const [contact, setContact] = useState(false);
 
     return (
         <Card className="filter-box">
@@ -72,6 +75,14 @@ const Aside = () => {
                     label="Contact Us"
                     icon={<ContactMailIcon />}
                 >
+                  <FilterListItem
+                        label="Send us a message"
+                        value={{
+                          sales_lte: 10,
+                          sales_gt: 0,
+                          sales: undefined,
+                      }}
+                    />
                 </FilterList>
 
                 <FilterList
@@ -101,7 +112,14 @@ export const LudumHelp = props => {
       component="div"
       actions={false}
       >
+        <>
         <Aside/>
+        {/* <Datagrid>
+            <TextField source="new" />
+            <TextField source="open" />
+            <TextField source="closed" />
+        </Datagrid> */}
+        </>
       </List>
     </LudumHelpWrapper>
     );

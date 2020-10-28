@@ -11,12 +11,23 @@ const LudumHelpWrapper = styled.div`
         font-weight: bold;
     }
     .filter-box {
-        width: 200px;
+        width: 230px;
         border-radius: 10px;
     }
     .filter-content {
         padding: 0 24px 16px 10px;
         border: 2px solid rgba(16,69,116,1);
+        border-radius: 10px;
+    }
+    .MuiTypography-overline {
+        font-weight: bold;
+    }
+    .MuiListItem-button:hover {
+        background-color: #E8F2FF;
+        border-radius: 10px;
+    }
+    .Mui-selected {
+        background-color: #ADD2FF;
         border-radius: 10px;
     }
 `;

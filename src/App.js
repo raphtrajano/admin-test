@@ -100,8 +100,9 @@ const dataProvider = fakeDataProvider({
     },
   ],
   help: [{
-    open: 0,
-    closed: 0,
+    new: 1,
+    open: 2,
+    closed: 5,
   }]
 });
 
