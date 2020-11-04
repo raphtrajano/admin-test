@@ -43,7 +43,7 @@ const Aside = () => {
                     icon={<LibraryBooksIcon />}
                 >
                     <FilterListItem
-                        label="New"
+                        label="All"
                         value={{
                             sales_lte: undefined,
                             sales_gt: 25,
@@ -111,11 +111,14 @@ export const LudumHelp = props => {
       >
         <>
         <Aside/>
-        {/* <Datagrid>
-            <TextField source="new" />
-            <TextField source="open" />
-            <TextField source="closed" />
-        </Datagrid> */}
+        <Datagrid>
+            <TextField source="id" />
+            <TextField source="type" />
+            <TextField source="description" />
+            <TextField source="active" />
+            <TextField source="created_at" />
+            <TextField source="updated_at" />
+        </Datagrid>
         </>
       </List>
     </LudumHelpWrapper>

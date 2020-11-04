@@ -100,10 +100,28 @@ const dataProvider = fakeDataProvider({
     },
   ],
   help: [{
-    new: 1,
-    open: 2,
-    closed: 5,
-  }]
+      id: 2342342,
+      type: "subject",
+      title: "Subject",
+      description: "This is the subject field of a ticket",
+      position: 1,
+      active: true,
+      agent_description: "Agent only description",
+      created_at: "2009-07-20T22:55:29Z",
+      updated_at: "2011-05-05T10:38:52Z"
+    },
+    {
+      id: 5435342,
+      type: "subject",
+      title: "Subject",
+      description: "This is the subject field of a ticket",
+      position: 1,
+      active: true,
+      agent_description: "Agent only description",
+      created_at: "2009-07-20T22:55:29Z",
+      updated_at: "2011-05-05T10:38:52Z"
+    },
+  ]
 });
 
 function App() {
