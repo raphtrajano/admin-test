@@ -17,6 +17,7 @@ import { ReviewList } from './components/Reviews';
 import { ProfileEdit } from './components/Profile/ProfileEdit';
 import { ProfileList } from './components/Profile/ProfileList';
 import { LudumHelp } from './components/LudumHelp/LudumHelp';
+import { TicketEdit } from './components/LudumHelp/TicketEdit';
 import { CustomLayout } from './components/CustomLayout';
 import './App.css';
 
@@ -99,27 +100,54 @@ const dataProvider = fakeDataProvider({
       comment: 'Hey user, Lorem ipsum Lorem ipsum' 
     },
   ],
-  help: [{
+  help: [
+    {
       id: 2342342,
       type: "subject",
-      title: "Subject",
+      title: "Subject 1",
       description: "This is the subject field of a ticket",
       position: 1,
       active: true,
+      status: "Open",
       agent_description: "Agent only description",
-      created_at: "2009-07-20T22:55:29Z",
-      updated_at: "2011-05-05T10:38:52Z"
+      created_at: "2009-07-20 T17:15:17Z",
+      updated_at: "2011-05-05 T22:38:52Z"
     },
     {
       id: 5435342,
       type: "subject",
-      title: "Subject",
-      description: "This is the subject field of a ticket",
-      position: 1,
-      active: true,
+      title: "Subject 2",
+      description: "This is the subject field of a ticket 2",
+      position: 2,
+      active: false,
+      status: "Closed",
       agent_description: "Agent only description",
-      created_at: "2009-07-20T22:55:29Z",
-      updated_at: "2011-05-05T10:38:52Z"
+      created_at: "2019-08-20 T08:23:53Z",
+      updated_at: "2019-09-05 T09:52:23Z"
+    },
+    {
+      id: 3154990,
+      type: "subject",
+      title: "Subject 3",
+      description: "This is the subject field of a ticket 3",
+      position: 3,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2015-05-20 T07:23:22Z",
+      updated_at: "2016-09-21 T16:25:32Z"
+    },
+    {
+      id: 2768900,
+      type: "subject",
+      title: "Subject 4",
+      description: "This is the subject field of a ticket 4",
+      position: 4,
+      active: true,
+      status: "Open",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
     },
   ]
 });
@@ -132,7 +160,7 @@ function App() {
       <Resource icon={CategoryIcon} options={{ label: 'Milestones/Tasks' }} name="milestones" list={MilestonesList} />
       <Resource icon={RateReviewIcon} options={{ label: 'Reports' }} name="reviews" list={ReviewList} />
       <Resource icon={AccountBoxIcon} options={{ label: 'Profile' }} name="account" list={ProfileList} edit={ProfileEdit} />
-      <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={LudumHelp} />
+      <Resource icon={HelpIcon} options={{ label: 'Ludum Help' }} name="help" list={LudumHelp} edit={TicketEdit} />
     </Admin>
     </div>
   );
