@@ -7,10 +7,11 @@ import {
   List,
   Datagrid,
   TextField,
+  Pagination,
 } from 'react-admin';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import { Typography, Card, CardContent } from "@material-ui/core";
+import { Typography, Card, CardContent, Box } from "@material-ui/core";
 import Zendesk from "react-zendesk";
 import { ZendeskAPI } from "react-zendesk";
 
@@ -33,8 +34,7 @@ const setting = {
   };
 
 const Aside = () => {
-    const [contact, setContact] = useState(false);
-
+  
     return (
         <Card className="filter-box">
             <CardContent className="filter-content"> 
@@ -45,25 +45,19 @@ const Aside = () => {
                     <FilterListItem
                         label="All"
                         value={{
-                            sales_lte: undefined,
-                            sales_gt: 25,
-                            sales: undefined,
+                            active: null,
                         }}
                     />
                     <FilterListItem
                         label="Open"
                         value={{
-                            sales_lte: 25,
-                            sales_gt: 10,
-                            sales: undefined,
+                            active: true,
                         }}
                     />
                     <FilterListItem
                         label="Closed"
                         value={{
-                            sales_lte: 10,
-                            sales_gt: 0,
-                            sales: undefined,
+                            active: false,
                         }}
                     />
                 </FilterList>
@@ -93,7 +87,6 @@ const Aside = () => {
 };
 
 export const LudumHelp = props => {
-    
     return (
     <LudumHelpWrapper>
       <Zendesk zendeskKey={ZENDESK_KEY} {...setting} onLoaded={() => console.log('is loaded')} />
@@ -101,27 +94,27 @@ export const LudumHelp = props => {
         Help Support
       </Typography>
       <List 
-      {...props}
       title=' '
       sort={{ field: 'name', order: 'ASC' }}
       perPage={20}
-      pagination={false}
       component="div"
-      actions={false}
+      className="list-wrapper"
+      {...props}
       >
         <>
-        <Aside/>
-        <Datagrid>
-            <TextField source="id" />
-            <TextField source="type" />
-            <TextField source="description" />
-            <TextField source="active" />
-            <TextField source="created_at" />
-            <TextField source="updated_at" />
-        </Datagrid>
+          <Box display="flex" margin="5px">
+            <Aside/>
+            <Datagrid rowClick="edit">
+                <TextField source="id" />
+                <TextField source="type" />
+                <TextField source="description" />
+                <TextField source="status" />
+                <TextField source="created_at" />
+                <TextField source="updated_at" />
+            </Datagrid>
+          </Box>
         </>
       </List>
     </LudumHelpWrapper>
     );
-
 };

@@ -12,12 +12,17 @@ const LudumHelpWrapper = styled.div`
     }
     .filter-box {
         width: 230px;
+        height: 296px;
         border-radius: 10px;
+        margin-right: 10px;
     }
     .filter-content {
         padding: 0 24px 16px 10px;
         border: 2px solid rgba(16,69,116,1);
         border-radius: 10px;
+    }
+    .list-wrapper {
+        width: 100%;
     }
     .MuiTypography-overline {
         font-weight: bold;
@@ -29,6 +34,9 @@ const LudumHelpWrapper = styled.div`
     .Mui-selected {
         background-color: #ADD2FF;
         border-radius: 10px;
+    }
+    .MuiTable-root {
+        background-color: #ffffff;
     }
 `;
 
