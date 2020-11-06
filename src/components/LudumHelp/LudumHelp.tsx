@@ -10,10 +10,13 @@ import {
   Pagination,
 } from 'react-admin';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import { Typography, Card, CardContent, Box } from "@material-ui/core";
 import Zendesk from "react-zendesk";
 import { ZendeskAPI } from "react-zendesk";
+
+import { Aside } from '../AsideFilter';
 
 import { LudumHelpWrapper } from './LudumHelp.style';
 
@@ -33,59 +36,6 @@ const setting = {
     }
   };
 
-const Aside = () => {
-  
-    return (
-        <Card className="filter-box">
-            <CardContent className="filter-content"> 
-                <FilterList
-                    label="Cases"
-                    icon={<LibraryBooksIcon />}
-                >
-                    <FilterListItem
-                        label="All"
-                        value={{
-                            active: null,
-                        }}
-                    />
-                    <FilterListItem
-                        label="Open"
-                        value={{
-                            active: true,
-                        }}
-                    />
-                    <FilterListItem
-                        label="Closed"
-                        value={{
-                            active: false,
-                        }}
-                    />
-                </FilterList>
-
-                <FilterList
-                    label="Contact Us"
-                    icon={<ContactMailIcon />}
-                >
-                  <FilterListItem
-                        label="Send us a message"
-                        value={{
-                          sales_lte: 10,
-                          sales_gt: 0,
-                          sales: undefined,
-                      }}
-                    />
-                </FilterList>
-
-                <FilterList
-                    label="Help Center"
-                    icon={<HeadsetMicIcon />}
-                >
-                </FilterList>
-            </CardContent>
-        </Card>
-    );
-};
-
 export const LudumHelp = props => {
     return (
     <LudumHelpWrapper>
@@ -96,14 +46,14 @@ export const LudumHelp = props => {
       <List 
       title=' '
       sort={{ field: 'name', order: 'ASC' }}
-      perPage={20}
+      perPage={10}
       component="div"
       className="list-wrapper"
       {...props}
       >
         <>
           <Box display="flex" margin="5px">
-            <Aside/>
+            <Aside />
             <Datagrid rowClick="edit">
                 <TextField source="id" />
                 <TextField source="type" />
