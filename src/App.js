@@ -20,6 +20,7 @@ import { LudumHelp } from './components/LudumHelp/LudumHelp';
 import { TicketEdit } from './components/LudumHelp/TicketEdit';
 import { CustomLayout } from './components/CustomLayout';
 import './App.css';
+import { FormatListNumberedRtlRounded } from '@material-ui/icons';
 
 const dataProvider = fakeDataProvider({
   boards: [
@@ -143,6 +144,102 @@ const dataProvider = fakeDataProvider({
       title: "Subject 4",
       description: "This is the subject field of a ticket 4",
       position: 4,
+      active: true,
+      status: "Open",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 8768900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: true,
+      status: "Open",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 4768900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 5468900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: true,
+      status: "Open",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 9968900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 5268900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 3368900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 8763900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
+      active: false,
+      status: "Closed",
+      agent_description: "Agent only description",
+      created_at: "2018-10-20 T12:35:19Z",
+      updated_at: "2018-11-25 T15:38:52Z"
+    },
+    {
+      id: 1168900,
+      type: "subject",
+      title: "Subject 5",
+      description: "This is the subject field of a ticket 5",
+      position: 5,
       active: true,
       status: "Open",
       agent_description: "Agent only description",
