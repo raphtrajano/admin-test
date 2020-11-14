@@ -30,7 +30,6 @@ export const TicketDetails =  ticket  => {
                 >
                     Case ID {data.id}
                 </Typography>
-                <Aside alignCenter/>
 
                 <Card className="ticket-details">
                     <TitleWrapper>
@@ -82,6 +81,7 @@ export const TicketEdit = props => (
     >
         <>
         <Box display="flex" margin="5px">
+        <Aside alignCenter/>    
         <TicketDetails {...props}/>
         </Box>
         </>
