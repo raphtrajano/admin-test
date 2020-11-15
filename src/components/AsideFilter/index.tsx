@@ -6,7 +6,7 @@ import {
 
 import { Card, CardContent } from "@material-ui/core";
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 
 import { AsideWrapper } from './AsideFilter.style';
@@ -62,7 +62,7 @@ export const Aside = (props: Props) => {
 
                 <FilterList
                     label="Help Center"
-                    icon={<HeadsetMicIcon />}
+                    icon={<MenuBookIcon />}
                 >
                 </FilterList>
             </CardContent>
