@@ -5,7 +5,7 @@ const TicketEditWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
-    margin: 5px;
+    margin: 0 5px 5px 0;
     .case-title {
         width: 100%;
         margin: 32px 0;
