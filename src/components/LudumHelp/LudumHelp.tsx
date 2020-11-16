@@ -7,12 +7,11 @@ import {
   List,
   Datagrid,
   TextField,
-  Pagination,
+  Filter,
+  TextInput,
 } from 'react-admin';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import { Typography, Card, CardContent, Box } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
+import { Typography, InputAdornment, Card, CardContent, Box } from "@material-ui/core";
 import Zendesk from "react-zendesk";
 import { ZendeskAPI } from "react-zendesk";
 
@@ -36,6 +35,19 @@ const setting = {
     }
   };
 
+  const TicketFilter = (props) => (
+    <Filter {...props}>
+      <TextInput className="search-input"  label="Search" source="q" 
+      InputProps={{
+      endAdornment: (
+        <InputAdornment position="end">
+            <SearchIcon />
+        </InputAdornment>
+      )
+    }} alwaysOn />
+    </Filter>
+  );
+
 export const LudumHelp = props => {
     return (
     <LudumHelpWrapper>
@@ -45,6 +57,7 @@ export const LudumHelp = props => {
       </Typography>
       <List 
       title=' '
+      filters={<TicketFilter />}
       sort={{ field: 'name', order: 'ASC' }}
       perPage={10}
       component="div"
