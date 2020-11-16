@@ -16,6 +16,9 @@ const AsideWrapper = styled.div<Props>`
         padding: 0 24px 16px 10px;
         border: 2px solid rgba(16,69,116,1);
         border-radius: 10px;
+        button:first-of-type {
+            display: none;
+        }
     }
     .MuiPaper-elevation1 {
         height: auto;
