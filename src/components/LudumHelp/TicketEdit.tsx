@@ -17,7 +17,6 @@ export const TicketDetails =  ticket  => {
         resource: 'help',
         payload: { id: ticket.id }
     });
-    console.log(data);
     return (
         <TicketEditWrapper>
             {!loading && (
@@ -30,7 +29,7 @@ export const TicketDetails =  ticket  => {
                 >
                     Case ID {data.id}
                 </Typography>
-                <Aside alignCenter/>    
+                <Aside className="menu"/>    
                 <Card className="ticket-details">
                     <TitleWrapper>
                         <Typography

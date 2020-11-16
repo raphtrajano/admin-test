@@ -8,13 +8,20 @@ const TicketEditWrapper = styled.div`
     margin: 0 5px 5px 0;
     .case-title {
         width: 100%;
-        margin: 32px 0;
+        margin: 28.6px 0;
         font-weight: bold;
     }
     .ticket-details {
         display: flex;
         flex-wrap: wrap;
+        @media(min-width: 2150px) {
+            width: 1500px;
+        }
         width: 70%;
+        margin: auto;
+        @media(max-width: 1100px) {
+            width: 100%;
+        }
     }
     .details-1 {
         width: 50%;
@@ -30,6 +37,16 @@ const TicketEditWrapper = styled.div`
         font-weight: bold;
         font-size: 18px;
         margin: 20px 0 5px 0;
+    }
+    .menu {
+        @media(max-width: 1100px) {
+            width: 100%;
+            margin-top: 25px;
+            order: 2;
+            > div {
+                width: 100%;
+            }
+        }
     }
 `;
 
